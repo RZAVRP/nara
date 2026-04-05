@@ -103,7 +103,7 @@ nav ul li a:hover {
 }
 
 /* ========================================= */
-/* BAGIAN YANG DIPERBAIKI (PRODUK/DATASET)   */
+/* BAGIAN PRODUK/DATASET                     */
 /* ========================================= */
 
 #dataset {
@@ -170,11 +170,14 @@ nav ul li a:hover {
     border-radius: 4px;
 }
 
-/* FOTO PRODUK (GALLERY) */
+/* FOTO PRODUK (GALERI KE BAWAH) */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex;
+    flex-direction: column; /* Mengatur item agar menyusun ke bawah */
+    align-items: center;    /* Pusatkan foto */
+    gap: 20px;              /* Jarak antar foto */
+    max-width: 500px;       /* Batasi lebar galeri agar tidak terlalu besar */
+    margin: 0 auto;         /* Pusatkan galeri di dalam section */
 }
 
 .gallery-item {
@@ -183,11 +186,13 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 3px solid white; 
+    width: 100%;            /* Isi lebar galeri */
 }
 
 .gallery-item img {
     width: 100%;
-    height: 180px; 
+    height: auto;           /* Biarkan tinggi menyesuaikan agar foto tidak gepeng */
+    aspect-ratio: 16/9;     /* Opsional: paksa rasio foto tertentu, misal 16:9 */
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
@@ -228,7 +233,7 @@ footer {
 @media (max-width: 600px) {
     .container { padding: 10px; }
     #dataset { padding: 20px; }
-    .gallery { grid-template-columns: repeat(2, 1fr); } 
+    .gallery { max-width: 100%; } /* Di HP gunakan lebar penuh */
 }
 
     </style>
@@ -265,7 +270,7 @@ footer {
 
 <main class="container">
     <article class="content">
-        <h2>  Burj Al Arab Jumeirah 👋</h2>
+        <h2>STANDAR MEWAH BURJ AL ARAB 👋</h2>
         <p>Halo guys! Kami dari <strong>Kelompok 4</strong> menghadirkan <strong>SNACK BOX PREMIUM</strong> yang Fresh & Elegant! Isinya pastry mewah + buah segar, ditambah minuman segar yang bikin sehat! Cocok banget buat standar kelas dunia kayak di <strong>Burj Al Arab Jumeirah</strong>! 🏨💎</p>
     </article>
 </main>
@@ -284,15 +289,7 @@ footer {
             </ul>
         </div>
 
-        <div class="product-info-block">
-            <h3>Kelebihan:</h3>
-            <ul>
-                <li>Standar Burj Al Arab</li>
-                <li>Presentasi Fresh & Elegant</li>
-                <li>Garpu Kayu Estetik</li>
-                <li>Hadir di SMK Ekonomika</li>
-            </ul>
-        </div>
+     
 
         <div class="product-info-block">
             <h3>Harga:</h3>
@@ -305,14 +302,15 @@ footer {
 
     <div class="gallery">
         <div class="gallery-item">
+            <img src="tempat.jpeg" alt="Booth The Market">
+        </div>
+        <div class="gallery-item">
             <img src="makanan.jpeg" alt="Croissant & Pastry">
         </div>
         <div class="gallery-item">
             <img src="minuman.jpeg" alt="Jus Buah Segar">
         </div>
-        <div class="gallery-item">
-            <img src="tempat.jpeg" alt="Booth The Market">
-        </div>
+        
     </div>
 </section>
 
@@ -323,11 +321,11 @@ footer {
         📍 SMK EKONOMIKA <br>
         Jl. Pendidikan, Grogol, Kec. Limo, Kota Depok
     </p>
-    <p style="margin-top: 15px; font-style: italic;">"Hadir untuk memberikan cita rasa sultan dengan harga teman! 🔥"</p>
+    <p style="margin-top: 15px; font-style: italic;">"Hadir untuk memberikan cita rasa sultan dengan harga terjangkau!"</p>
 </section>
 
 <footer>
-    <p>&copy; 2026 Tugas Perhotelan - Kelompok 4 (Coding Section)</p>
+    <p>&copy; 2026 Tugas Perhotelan - Kelompok 4 </p>
 </footer>
 
 </body>
