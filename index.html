@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok 4 - Snack Box Burj Al Arab</title>
+    <style>
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    background: #111827;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    padding: 1rem 1.5rem;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: #6366f1;
+}
+
+/* Anggota */
+.team {
+    background: #f8fafc;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.team h2 {
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+.team ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.team li {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-transform: capitalize;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.content {
+    flex: 1;
+    max-width: 800px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* ========================================= */
+/* BAGIAN YANG DIPERBAIKI (PRODUK/DATASET)   */
+/* ========================================= */
+
+#dataset {
+    max-width: 900px; 
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff; 
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+    border-left: 5px solid #f59e0b; 
+}
+
+#dataset h2 {
+    text-align: center;
+    color: #b45309;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Styling Text Detail Produk */
+.product-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+    background: #fffbeb;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product-info-block h3 {
+    color: #111827;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fcd34d;
+    display: inline-block;
+}
+
+.product-info-block ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.product-info-block ul li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Icon check list custom */
+.product-info-block ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* Harga styling */
+.price-tag {
+    font-weight: bold;
+    color: #166534; 
+    background: #dcfce7;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* FOTO PRODUK (GALLERY) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid white; 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+
+.gallery-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); 
+}
+
+
+/* Kontak */
+#kontak {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #e0f2fe;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container { padding: 10px; }
+    #dataset { padding: 20px; }
+    .gallery { grid-template-columns: repeat(2, 1fr); } 
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>KELOMPOK 4 - THE MARKET</h1>
+    <p>Inspirasi Kemewahan Burj Al Arab Jumeirah dalam Satu Box</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#team">Anggota</a></li>
+        <li><a href="#dataset">Produk</a></li>
+        <li><a href="#kontak">Lokasi</a></li>
+    </ul>
+</nav>
+
+<section class="team" id="team">
+    <h2>Anggota Kelompok 4</h2>
+    <ul>
+        <li>siti sarah al aisah</li>
+        <li>kinanti asya daniswara </li>
+        <li>reva adinda ayu</li>
+        <li>raffy ibnu fairu</li>
+        <li>rahmat zakaria</li>
+        <li>hafiz sya</li>
+        <li>rizki muhamad fariz</li>
+        <li>nurhabibah lubis</li>
+    </ul>
+</section>
+
+<main class="container">
+    <article class="content">
+        <h2>  Burj Al Arab Jumeirah 👋</h2>
+        <p>Halo guys! Kami dari <strong>Kelompok 4</strong> menghadirkan <strong>SNACK BOX PREMIUM</strong> yang Fresh & Elegant! Isinya pastry mewah + buah segar, ditambah minuman segar yang bikin sehat! Cocok banget buat standar kelas dunia kayak di <strong>Burj Al Arab Jumeirah</strong>! 🏨💎</p>
+    </article>
+</main>
+
+<section id="dataset">
+    <h2>🍽️ Luxury Menu – The Market @ Kelompok 4</h2>
+
+    <div class="product-details">
+        <div class="product-info-block">
+            <h3>Menu Utama:</h3>
+            <ul>
+                <li>Butter Croissant Premium</li>
+                <li>Fresh Fruit Sliced</li>
+                <li>Jus Sehat Surus</li>
+                <li>Camilan Standar Hotel</li>
+            </ul>
+        </div>
+
+        <div class="product-info-block">
+            <h3>Kelebihan:</h3>
+            <ul>
+                <li>Standar Burj Al Arab</li>
+                <li>Presentasi Fresh & Elegant</li>
+                <li>Garpu Kayu Estetik</li>
+                <li>Hadir di SMK Ekonomika</li>
+            </ul>
+        </div>
+
+        <div class="product-info-block">
+            <h3>Harga:</h3>
+            <ul>
+                <li>Paket Basic: <span class="price-tag">15k</span></li>
+                <li>Paket Premium: <span class="price-tag">20k</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="makanan.jpeg" alt="Croissant & Pastry">
+        </div>
+        <div class="gallery-item">
+            <img src="minuman.jpeg" alt="Jus Buah Segar">
+        </div>
+        <div class="gallery-item">
+            <img src="tempat.jpeg" alt="Booth The Market">
+        </div>
+    </div>
+</section>
+
+<section id="kontak">
+    <h2>Kunjungi Kami</h2>
+    <p>Nikmati kemewahan rasa di lokasi kami:</p>
+    <p style="font-size: 1.1rem; font-weight: bold; color: #0369a1; margin-top: 10px;">
+        📍 SMK EKONOMIKA <br>
+        Jl. Pendidikan, Grogol, Kec. Limo, Kota Depok
+    </p>
+    <p style="margin-top: 15px; font-style: italic;">"Hadir untuk memberikan cita rasa sultan dengan harga teman! 🔥"</p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Tugas Perhotelan - Kelompok 4 (Coding Section)</p>
+</footer>
+
+</body>
+</html>
